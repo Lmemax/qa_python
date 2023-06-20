@@ -20,9 +20,8 @@ class TestBooksCollector:
         assert collector.get_books_rating() == {'Война и мир': 1}
 
     def test_set_book_rating_not_list_fails(self, collector):
-        collector.add_new_book('Война и мир')
         collector.set_book_rating('Подросток', 2)
-        assert collector.get_books_rating() != {'Подросток': 2}
+        assert collector.get_book_rating('Подросток') is None
 
     def test_set_book_rating_min_than_can(self, collector):
         collector.add_new_book('Война и мир')
