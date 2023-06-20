@@ -64,7 +64,7 @@ class TestBooksCollector:
     def test_add_book_in_favorites_not_list(self, collector):
         collector.add_new_book('Война и мир')
         collector.add_book_in_favorites('Подросток')
-        assert collector.books_rating != {'Подросток': 1}
+        assert collector.get_list_of_favorites_books() != ['Подросток']
 
     def test_delete_book_from_favorites(self, collector):
         collector.add_new_book('Война и мир')
