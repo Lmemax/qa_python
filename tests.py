@@ -26,7 +26,7 @@ class TestBooksCollector:
     def test_set_book_rating_min_than_can(self, collector):
         collector.add_new_book('Война и мир')
         collector.set_book_rating('Война и мир', 0)
-        assert collector.get_books_rating() == {'Война и мир': 1}
+        assert collector.get_book_rating('Война и мир') == 1
 
     def test_set_book_rating_max_than_can(self, collector):
         collector.add_new_book('Война и мир')
