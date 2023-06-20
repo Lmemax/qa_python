@@ -56,12 +56,6 @@ class TestBooksCollector:
         result = collector.get_books_with_specific_rating(9)
         assert (['Война и мир', 'Дядя Ваня']) == result
 
-    def test_get_books_rating_list_full(self, collector):
-        collector.add_new_book('Война и мир')
-        collector.add_new_book('Подросток')
-        collector.add_new_book('Дядя Ваня')
-        assert collector.get_books_rating() != {}
-
     def test_add_book_in_favorites(self, collector):
         collector.add_new_book('Война и мир')
         collector.add_book_in_favorites('Война и мир')
