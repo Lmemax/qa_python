@@ -37,7 +37,7 @@ class TestBooksCollector:
     def test_set_book_rating(self, collector):
         collector.add_new_book('Война и мир')
         collector.set_book_rating('Война и мир', 7)
-        assert collector.books_rating == {'Война и мир': 7}
+        assert collector.get_book_rating('Война и мир') == 7
 
     def test_get_book_rating_no_rate(self, collector):
         collector.add_new_book('Война и мир')
