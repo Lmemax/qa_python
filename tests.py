@@ -28,10 +28,11 @@ class TestBooksCollector:
         collector.set_book_rating('Война и мир', 0)
         assert collector.get_book_rating('Война и мир') == 1
 
-    def test_set_book_rating_max_than_can(self, collector):
+    @pytest.mark.parametrize('rate', [-1, 0, 11, 15])
+    def test_set_book_rating_max_than_can(self, collector, rate):
         collector.add_new_book('Война и мир')
-        collector.set_book_rating('Война и мир', 15)
-        assert collector.get_books_rating() == {'Война и мир': 1}
+        collector.set_book_rating('Война и мир', rate)
+        assert collector.get_book_rating('Война и мир') == 1
 
     def test_set_book_rating(self, collector):
         collector.add_new_book('Война и мир')
