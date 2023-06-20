@@ -42,7 +42,7 @@ class TestBooksCollector:
     def test_get_book_rating_no_rate(self, collector):
         assert collector.get_book_rating('Подросток') is None
 
-    def test_get_book_rating(self, collector):
+    def test_get_book_rating_after_add(self, collector):
         collector.add_new_book('Война и мир')
         assert collector.get_book_rating('Война и мир') == 1
 
