@@ -59,7 +59,7 @@ class TestBooksCollector:
     def test_add_book_in_favorites(self, collector):
         collector.add_new_book('Война и мир')
         collector.add_book_in_favorites('Война и мир')
-        assert collector.books_rating == {'Война и мир': 1}
+        assert collector.get_list_of_favorites_books() == ['Война и мир']
 
     def test_add_book_in_favorites_not_list(self, collector):
         collector.add_new_book('Война и мир')
