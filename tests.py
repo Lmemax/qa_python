@@ -23,13 +23,8 @@ class TestBooksCollector:
         collector.set_book_rating('Подросток', 2)
         assert collector.get_book_rating('Подросток') is None
 
-    def test_set_book_rating_min_than_can(self, collector):
-        collector.add_new_book('Война и мир')
-        collector.set_book_rating('Война и мир', 0)
-        assert collector.get_book_rating('Война и мир') == 1
-
     @pytest.mark.parametrize('rate', [-1, 0, 11, 15])
-    def test_set_book_rating_max_than_can(self, collector, rate):
+    def test_set_book_rating_in_border(self, collector, rate):
         collector.add_new_book('Война и мир')
         collector.set_book_rating('Война и мир', rate)
         assert collector.get_book_rating('Война и мир') == 1

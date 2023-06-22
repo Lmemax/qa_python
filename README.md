@@ -31,7 +31,7 @@ Pytest - библиотека
 
 8. test_get_books_with_specific_rating - проверка списка книг с указанным рейтингом от 1 до 10
 
-9. def test_add_book_in_favorites - проверка по добавлению книги в список избранных
+9. test_add_book_in_favorites - проверка по добавлению книги в список избранных
 
 10. test_add_book_in_favorites_not_list - проверка , что нельзя доавить в избранные книгу, которой нет в списке
 
