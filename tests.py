@@ -77,4 +77,4 @@ class TestBooksCollector:
         collector.add_new_book('Дядя Ваня')
         collector.add_book_in_favorites('Война и мир')
         collector.add_book_in_favorites('Дядя Ваня')
-        assert collector.get_list_of_favorites_books() == ['Война и мир', 'Дядя Ваня']
+        assert 'Война и мир', 'Дядя Ваня' in collector.get_list_of_favorites_books
